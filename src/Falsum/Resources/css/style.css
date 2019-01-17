@@ -1,0 +1,174 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,500,700);
+
+body{
+	font-family: 'Raleway', sans-serif;
+	background-color: #FFFFFF;
+}
+
+#container{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	overflow: auto;
+}
+
+.header{
+	background-color: #2B3442;
+	color: #A4B3CD;
+	padding: 30px;
+}
+
+.header h1{
+	font-size: 32px;
+	line-height: 38px;
+	margin: 0;
+	font-weight: 400;
+	color: #E2EEFF;
+}
+
+.header h2{
+	font-size: 18px;
+	line-height: 26px;
+	margin: 0;
+	font-weight: 400;
+}
+
+.left{
+	padding: 30px 15px 30px 30px;
+	width: 65%;
+	box-sizing: border-box;
+	float: left;
+}
+
+.right{
+	padding: 30px 30px 30px 15px;
+	width: 35%;
+	box-sizing: border-box;
+	float: left;
+}
+
+h3{
+	color: #2A303A;
+	text-transform: uppercase;
+	font-size: 14px;
+	font-weight: 700;
+	margin: 0;
+}
+
+.code{
+	margin-top: 15px;
+	background-color: #EBF0F6;
+	overflow: auto;
+	padding: 15px;
+	box-sizing: border-box;
+	display: none;
+	border-radius: 10px;
+}
+
+.code.selected{
+	display: block;
+}
+
+.excerpt{
+	margin: 0;
+}
+
+.excerpt code{
+	width: 100%;
+}
+
+.error-line{
+	background-color: #C4CEDC !important;
+}
+
+.stacks{
+	margin-top: 15px;
+	max-height: calc(100vh - 205px);
+	overflow-y: auto;
+}
+
+.stack{
+	display: block;
+	width: 100%;
+	background-color: #EBF0F6;
+	padding: 20px 10px;
+	border-left: 5px solid #AAB5C5;
+	border-bottom: 1px solid #bfc3ce;
+	box-sizing: border-box;
+	transition: all 200ms ease-in-out;
+	cursor: pointer;
+	position: relative;
+}
+
+.stack.selected{
+	border-left: 5px solid #4989F8;
+}
+
+.stack:hover{
+	background-color: #ECEEF5;
+}
+
+.stack h4, .stack p{
+	margin: 0;
+}
+
+.stack h4{
+	line-height: 25px;
+	font-size: 14px;
+	color: #545863;
+	font-weight: 500;
+}
+
+.stack p{
+	line-height: 18px;
+	font-size: 14px;
+	color: #545863;
+	font-weight: 400;
+	margin-top: 5px;
+}
+
+.pos{
+	width: 25px;
+	height: 25px;
+	color: #fff;
+	background-color: #2B3442;
+	display: inline-block;
+	text-align: center;
+	line-height: 25px;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	border-radius: 50%;
+}
+
+.headers{
+	margin-top: 30px;
+	margin-bottom: 15px;
+}
+
+.variables{
+	font-size: 13px;
+	color: #707071;
+	word-break: break-all;
+	margin-bottom: 3px;
+}
+
+.variables span{
+	color: #2A303A;
+	width: 200px;
+	display: inline-block;
+	font-weight: 600;
+}
+
+pre{
+	display: block;
+    padding: 9.5px;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #f5f5f5;
+}

@@ -1,0 +1,30 @@
+{
+    "name": "ikkez/f3-falsum",
+    "license": "MIT",
+    "description": "Pretty error handling for Fat-Free Framework",
+    "keywords": ["library", "error", "handling", "exception", "falsum", "f3", "fat-free framework"],
+    "homepage": "https://github.com/ikkez/f3-falsum",
+    "authors": [
+        {
+            "name": "Rafael Morais dos Santos",
+            "homepage": "https://ra.fael.ml",
+            "role": "Developer"
+        },
+        {
+            "name": "Christian Knuth",
+            "homepage": "https://ikkez.de",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "suggest": {
+        "symfony/var-dumper": "Pretty print complex values better with var-dumper available"
+    },
+    "autoload": {
+        "psr-4": {
+            "Falsum\\": "src/Falsum/"
+        }
+    }
+}
