@@ -1,5 +1,21 @@
 <?php
 
+/**
+ * Pretty error handling for the PHP Fat-Free Framework
+ *
+ * The contents of this file are subject to the terms of the GNU General
+ * Public License Version 3.0. You may not use this file except in
+ * compliance with the license. Any of the license terms and conditions
+ * can be waived if you get permission from the copyright holder.
+ *
+ * Christian Knuth <ikkez0n3@gmail.com>
+ * https://github.com/ikkez/f3-falsum
+ *
+ * @version 2.6.0
+ * @date: 03.01.2017
+ * @author: Rafael Santos, https://github.com/rafamds
+ **/
+
 namespace Falsum;
 
 class Run
