@@ -43,6 +43,10 @@ class Run {
 			function($fwi) {
 				$resources=__DIR__.'/Resources/';
 
+				// clear output buffer
+				while(ob_get_level())
+					ob_end_clean();
+
 				/*
 				 * CSS Files
 				 */
