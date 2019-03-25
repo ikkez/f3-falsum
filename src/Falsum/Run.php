@@ -65,6 +65,11 @@ class Run {
 				$trace=$fwi->get('ERROR.trace');
 
 				preg_match_all("/\[.*:\d+\]/",strip_tags($trace),$matches);
+
+				// drop first item, which is the error handler definition line
+				if (!empty($matches[0]))
+					array_shift($matches[0]);
+
 				foreach ($matches[0] as $key=>$result) {
 					$result=str_replace(['[',']'],'',$result);
 					preg_match_all("/:\d+/",$result,$line);
@@ -76,7 +81,6 @@ class Run {
 					$line=$errors[$key]['line']-1;
 					$line_start=$line-6;
 					$line_end=$line+6;
-					$pos=0;
 
 					$user_agent=$_SERVER['HTTP_USER_AGENT'];
 					$os_array=[
@@ -130,7 +134,6 @@ class Run {
 						endif;
 					endfor;
 					$errors[$key]['script'].='</pre></div>';
-					$key++;
 				}
 
 				$html_structure=''.
