@@ -64,11 +64,16 @@ class Run {
 				$text=$fwi->get('ERROR.text');
 				$trace=$fwi->get('ERROR.trace');
 
+				if (!$fwi->devoid('EXCEPTION',$exception)) {
+					$text = get_class($exception).': '.$text;
+				}
+
 				preg_match_all("/\[.*:\d+\]/",strip_tags($trace),$matches);
 
-				// drop first item, which is the error handler definition line
-				if (!empty($matches[0]))
-					array_shift($matches[0]);
+				if (!$exception)
+					// drop first item, which is the error handler definition line
+					if (!empty($matches[0]))
+						array_shift($matches[0]);
 
 				foreach ($matches[0] as $key=>$result) {
 					$result=str_replace(['[',']'],'',$result);
