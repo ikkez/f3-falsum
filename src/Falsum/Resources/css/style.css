@@ -60,7 +60,7 @@ h3{
 .code{
 	margin-top: 15px;
 	background-color: #EBF0F6;
-	overflow: auto;
+	overflow: hidden;
 	padding: 15px;
 	box-sizing: border-box;
 	display: none;
@@ -73,6 +73,7 @@ h3{
 
 .excerpt{
 	margin: 0;
+	overflow-x: auto;
 }
 
 .excerpt code{
