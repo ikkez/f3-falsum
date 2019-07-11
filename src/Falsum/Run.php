@@ -11,7 +11,7 @@
  * Christian Knuth <ikkez0n3@gmail.com>
  * https://github.com/ikkez/f3-falsum
  *
- * @version 2.7.0
+ * @version 2.8.0
  * @date: 11.07.2019
  * @author: Rafael Santos, https://github.com/rafamds
  **/
