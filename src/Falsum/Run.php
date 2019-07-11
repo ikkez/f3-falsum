@@ -11,8 +11,8 @@
  * Christian Knuth <ikkez0n3@gmail.com>
  * https://github.com/ikkez/f3-falsum
  *
- * @version 2.6.0
- * @date: 03.01.2017
+ * @version 2.6.1
+ * @date: 11.07.2019
  * @author: Rafael Santos, https://github.com/rafamds
  **/
 
@@ -70,9 +70,13 @@ class Run {
 					if (!empty($matches[0]))
 						array_shift($matches[0]);
 
+				$errors=[];
+
 				foreach ($matches[0] as $key=>$result) {
 					$result=str_replace(['[',']'],'',$result);
 					preg_match_all("/:\d+/",$result,$line);
+					if (!isset($errors[$key]))
+						$errors[$key]=[];
 					$errors[$key]['line']=str_replace(':','',$line[0][0]);
 					$errors[$key]['file']=
 						str_replace(':'.$errors[$key]['line'],'',$result);
