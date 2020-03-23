@@ -78,7 +78,7 @@ class Run {
 				$errors[$key]=[];
 			$errors[$key]['line']=str_replace(':','',$line[0][0]);
 			$errors[$key]['file']=
-				str_replace(':'.$errors[$key]['line'],'',$result);
+				preg_replace("/(:".$errors[$key]['line']."|\(\d+\) : eval\(\)\'d code:".$errors[$key]['line'].")/",'',$result);
 
 			$eol='';
 			$line=$errors[$key]['line']-1;
