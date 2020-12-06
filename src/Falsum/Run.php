@@ -11,8 +11,8 @@
  * Christian Knuth <ikkez0n3@gmail.com>
  * https://github.com/ikkez/f3-falsum
  *
- * @version 2.8.0
- * @date: 11.07.2019
+ * @version 2.8.1
+ * @date: 06.012.2020
  * @author: Rafael Santos, https://github.com/rafamds
  **/
 
@@ -85,8 +85,14 @@ class Run {
 			$line_start=$line-6;
 			$line_end=$line+6;
 
-			$path = $fw->get('ROOT').'/';
-			$rows=file(realpath($path.$errors[$key]['file']));
+			$filePath = $errors[$key]['file'];
+			if (!is_file($filePath))
+				$filePath=$fw->get('ROOT').'/'.$filePath;
+			if (!is_file($filePath)) {
+				$errors[$key]['script']='';
+				continue;
+			}
+			$rows=file($filePath);
 			$errors[$key]['script']='<div class="code-wrap">';
 			$errors[$key]['script'].='<pre class="excerpt">'.$eol;
 			for ($pos=$line_start;$pos<=$line_end;$pos++) {
