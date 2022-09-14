@@ -64,10 +64,21 @@ class Run {
 
 		preg_match_all("/\[.*:\d+\]/",strip_tags($trace),$matches);
 
-		if (!$exception)
+		if (!$exception) {
 			// drop first item, which is the error handler definition line
-			if (!empty($matches[0]) && count($matches[0])>1)
+			if (!empty($matches[0]) && count($matches[0])>1) {
 				array_shift($matches[0]);
+			}
+		}
+
+		preg_match_all("/\[.*:\d+\]/",
+			strip_tags(str_replace($fw->get('ROOT').'/', '',
+			$fw->get('ERROR.text'))),
+			$matches_user_error);
+
+		if(array_key_exists(0, $matches) && array_key_exists(0, $matches_user_error)) {
+			$matches[0] = array_merge_recursive($matches_user_error[0], $matches[0]);
+		}
 
 		$errors=[];
 
@@ -89,7 +100,7 @@ class Run {
 			if (!is_file($filePath))
 				$filePath=$fw->get('ROOT').'/'.$filePath;
 			if (!is_file($filePath)) {
-				$errors[$key]['script']='';
+				$errors[$key]['script']='File not found: '.$filePath;
 				continue;
 			}
 			$rows=file($filePath);
